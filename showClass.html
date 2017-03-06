@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>showClass</title>
+</head>
+<body>
+	<div class="haha" style = "height:200px;width:400px;background:red;">
+		<div class="heihei" style = "height:100px;width:100px;background:black;"></div>
+	</div>
+	<script>
+		//当鼠标点击任意元素时显示class
+		document.onclick = function(e){
+			// IE6/7/8不支持传入参数，所以用window.event兼容
+			var e = e ? e : window.event;
+			//	IE6/7/8中使用e.srcElement，在JQ中使用target实现兼容
+			var tar = e.srcElement || e.target;
+			var tarClass = tar.className;
+
+			alert(tarClass)
+		}
+	</script>
+</body>
+</html>
