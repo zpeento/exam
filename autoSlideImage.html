@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>autoSlideImage</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#slideContainer{
+			position: relative;
+			width: 500px;
+			height: 600px;
+			background: blue;
+			overflow: hidden;
+		}
+		#slideContainer ul{
+			position: relative;
+			width: 2000px;
+			height: 100%;
+			left: 0px;
+		}
+		#slideContainer li{
+			width: 500px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div id="slideContainer">
+		<ul>
+			<li><img src="images/dog.jpg" alt=""></li>
+			<li><img src="images/dog2.jpg" alt=""></li>
+			<li><img src="images/dog.jpg" alt=""></li>
+			<li><img src="images/dog2.jpg" alt=""></li>
+		</ul>
+	</div>
+	<script>
+		window.onload = function(){
+			autoSlide("containerId");
+		}
+		function autoSlide(containerId){
+			var sliderContainer = document.getElementById(containerId);
+			var sliderUl = sliderContainer.childNodes;
+			var index = 0;
+			function slide(){
+				index++;
+				var shift = -index%4 * 400;
+				sliderUl.style.left = shift + "px";
+			}
+			setTimeOut(slide,1500)
+		}
+	</script>
+</body>
+</html>
