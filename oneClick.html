@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="clickMe">你好</button>
+	<script>
+		window.onload = function () {
+			var buttonTarget = document.getElementById('clickMe');
+			// var i = 0;
+			// buttonTarget.onclick = function(){
+			// 	console.log(i)
+			// 	if( i%2 == 0 ){
+			// 		alert('成功')
+			// 	}else{
+			// 		alert('失败')
+			// 	}
+			// 	i++;
+			// }
+
+			buttonTarget.onclick = oneClick();
+		}
+		function oneClick() {
+			var i = 0;
+			return function(){
+				if( i%2 == 0 ){
+					alert('成功')
+				}else{
+					alert('失败')
+				}
+				i++;
+			}
+		}
+	</script>
+</body>
+</html>
