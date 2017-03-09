@@ -16,8 +16,8 @@
 			overflow: hidden;
 		}
 		#slideContainer ul{
-			position: relative;
-			width: 2000px;
+			position: absolute;
+			width: 2520px;
 			height: 100%;
 			left: 0px;
 		}
@@ -34,22 +34,27 @@
 			<li><img src="images/dog2.jpg" alt=""></li>
 			<li><img src="images/dog.jpg" alt=""></li>
 			<li><img src="images/dog2.jpg" alt=""></li>
+			<li><img src="images/dog.jpg" alt=""></li>
 		</ul>
 	</div>
 	<script>
 		window.onload = function(){
-			autoSlide("containerId");
+			autoSlide("slideContainer",5,504,1500);
 		}
-		function autoSlide(containerId){
+		function autoSlide(containerId,picLength,picWidth,timer){
 			var sliderContainer = document.getElementById(containerId);
-			var sliderUl = sliderContainer.childNodes;
+			console.log(sliderContainer)
+			var sliderUl = sliderContainer.childNodes[1];
+			console.log(sliderUl)
 			var index = 0;
 			function slide(){
-				index++;
-				var shift = -index%4 * 400;
+				console.log(index)
+				var shift = -index%picLength * picWidth;
 				sliderUl.style.left = shift + "px";
+				index++;
 			}
-			setTimeOut(slide,1500)
+
+			setInterval(slide,timer)
 		}
 	</script>
 </body>
