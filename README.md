@@ -12,3 +12,5 @@ arrayDistinct:数组去重
 shengbeiLayout:圣杯布局
 
 deepCopy:深拷贝
+
+getUrlQuery:将url解析为查询参数对象

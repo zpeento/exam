@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>查询字符串参数</title>
+</head>
+<body>
+	<script>
+		function getUrlQuery() {
+			//location.search返回包括'?'在内的查询字符串
+			var qs = (location.search.length>0?location.search.substring(1):'');
+			var args = {};
+
+			var items = qs.length?qs.split('&'):[];
+			for(var i=0 ; i<items.length;i++){
+				var item = items[i].split('=');
+				//需要使用decodeURIComponent()进行解码，因为查询字符串应该是被加密过的
+				var name = decodeURIComponent(item[0]);
+				var value = decodeURIComponent(item[1]);
+
+				if(name.length){
+					args[name] = value;
+				}
+			}
+
+			return args;
+		}
+	</script>
+	
+</body>
+</html>
