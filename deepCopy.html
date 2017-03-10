@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>深拷贝</title>
+</head>
+<body>
+	
+	<script>
+		function deepCopy(p,c){
+			var c = c || {};
+			for(var i in p){
+				if(typeof p[i]==='object'){
+					c[i] = (p[i].constructor === Array) ? []:{};
+					arguments.callee(p[i],c[i]);
+				}else{
+					c[i] = p[i]
+				}
+			}
+
+			return c
+		}
+		var a = {
+			b : 2,
+			c : [2,3,4]
+		}
+		var h = deepCopy(a);
+		console.log(h);
+	</script>
+</body>
+</html>
