@@ -9,7 +9,7 @@
 		var arr = [1,5,4,7,5,2,4];
 
 		// arrDistinct1 通过indexOf判断是否出现过
-		(function arrDistinct1(arr) {
+		function arrDistinct1(arr) {
 			var result = [];
 			for( var i = 0 ; i < arr.length ; i++ ){
 				if( result.indexOf(arr[i]) == -1 ){
@@ -17,9 +17,23 @@
 				}
 			}
 			console.log(result)
-		})(arr)
+		}
 
+		arrDistinct1(arr);
+		//	arrDistinct2 通过对象属性判断是否出现过
+		function arrDistinct2(arr) {
+			var result = [];
+			var obj = {};
+			for( var i =0 ; i < arr.length ; i++ ){
+				if(!obj[arr[i]]){
+					obj[arr[i]] = 1;
+					result.push(arr[i]);
+				}
+			}
+			console.log(result);
+		}
 
+		arrDistinct2(arr)
 	</script>
 </body>
 </html>
