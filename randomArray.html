@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组随机排列</title>
+</head>
+<body>
+	<script>
+		var arr=[8,2,4,6,1,8,5]
+
+		function random1() {
+			arr.sort(function(){
+				return Math.random()>0.5?-1:1
+			})
+			console.log(arr)
+		}
+		random1(arr)
+	</script>
+	
+</body>
+</html>
