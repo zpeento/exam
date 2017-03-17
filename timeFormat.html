@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时间格式化处理</title>
+</head>
+<body>
+	<script>
+		function timeFormat() {
+			var date = new Date();
+			var year = date.getFullYear();
+			var month = date.getMonth()+1;
+			var day = date.getDate();
+
+			var hour = date.getHours();
+			var minute = date.getMinutes();
+			var second = date.getSeconds();
+
+			console.log([year, month, day].map(formatNumber).join('/')+' '+[hour,minute,second].map(formatNumber).join(':'))
+		}
+
+		//该函数的作用在于当数值为小于十时，十位补0
+		function formatNumber(n) {
+			n = n.toString();
+			return n[1] ? n : '0' + n;
+		}
+
+		timeFormat()
+	</script>
+</body>
+</html>
