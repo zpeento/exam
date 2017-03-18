@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+</head>
+<body>
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.onreadychange = function(){
+			if(xhr.readystate == 4){
+				if((xhr.status >= 200 && xhr.status < 300)||xhr.status == 304){
+					alert(xhr.responseText)
+				}else{
+					alert('unsuccess'+xhr.status)
+				}
+			}
+		}
+		xhr.open("get","example.txt",true)
+		xhr.send(null)
+	</script>
+</body>
+</html>
