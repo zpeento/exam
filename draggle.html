@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简单拖拽</title>
+	<style>
+		#draggle_box{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: red;
+			left:200px;
+			top: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div id="draggle_box">
+		拖拽
+	</div>
+	<script>
+		var draggle_box = document.getElementById('draggle_box');
+
+		draggle_box.onmousedown = function(e){
+			var e = e || window.event;
+			var mousePositionX = e.clientX;
+			var mousePositionY = e.clientY;
+			var offX = draggle_box.offsetLeft;
+			var offY = draggle_box.offsetTop;	
+			var flag = true; 	
+
+			document.onmousemove = function(e){
+				if(flag){
+					var e = e || window.event;
+					var mouseCurPositionX = e.clientX;
+					var mouseCurPositionY = e.clientY;
+
+					var distanceX = offX + mouseCurPositionX - mousePositionX;
+					var distanceY = offY + mouseCurPositionY - mousePositionY;
+
+					draggle_box.style.left = distanceX + 'px';
+					draggle_box.style.top = distanceY + 'px';
+				}
+			}
+
+			document.onmouseup = function(){
+				flag = false;
+			}
+		}
+
+	</script>
+</body>
+</html>
