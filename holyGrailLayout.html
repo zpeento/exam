@@ -10,7 +10,7 @@
 			flex-direction: column;
 		}
 		header,footer{
-			flex:1;
+			flex:0 0 5em;
 			background: black
 		}
 		.holy-grail-body{
@@ -20,7 +20,7 @@
 		}
 		.holy-grail-content{
 			flex:1;
-			background: green
+			background: red
 		}
 		.holy-grail-nav,.holy-grail-ads{
 			/*项目占据主轴的空间，即两边的宽度*/
@@ -29,6 +29,18 @@
 		}
 		.holy-grail-ads{
 			order:-1;
+		}
+
+		@media (max-width: 768px){
+			.holy-grail-body {
+			    flex-direction: column;
+			    flex: 1;
+			}
+			.holy-grail-content,
+			.holy-grail-nav,
+			.holy-grail-ads {
+			    flex: auto;
+			}
 		}
 	</style>
 </head>
