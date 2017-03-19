@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基于flex的圣杯布局</title>
+	<style>
+		.holy-grail{
+			display: flex;
+			min-height: 100vh;
+			flex-direction: column;
+		}
+		header,footer{
+			flex:1;
+			background: black
+		}
+		.holy-grail-body{
+			display: flex;
+			flex:1;
+			background: red
+		}
+		.holy-grail-content{
+			flex:1;
+			background: green
+		}
+		.holy-grail-nav,.holy-grail-ads{
+			/*项目占据主轴的空间，即两边的宽度*/
+			flex:0 0 12em;
+			background: blue
+		}
+		.holy-grail-ads{
+			order:-1;
+		}
+	</style>
+</head>
+<body class="holy-grail">
+	<header>...</header>
+	<div class="holy-grail-body">
+		<main class="holy-grail-content">...</main>
+		<nav class="holy-grail-nav">...</nav>
+		<aside class="holy-grail-ads">...</aside>
+	</div>
+	<footer>...</footer>
+</body>
+</html>
