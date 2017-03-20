@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web worker</title>
+</head>
+<body>
+	<script>
+		//创建worker对象
+		var worker = new Worker('webworker.js');
+		worker.onmessage = function(e){
+			//消息的内容可以通过data获取
+			alert('收到消息啦'+e.data)
+			console.log(e.data)
+			//一旦终止，只能重新创建不能重启
+			worker.terminate();
+		}
+		
+		worker.onerror = function(e){
+			alert('错了'+e.message)
+			worker.terminate();
+		}
+
+		worker.postMessage('haha')
+	</script>
+</body>
+</html>
