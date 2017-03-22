@@ -16,11 +16,33 @@
 			border: 30px solid transparent;
 			border-top-color: black;
 		}
+		.triangle-box{
+			overflow: hidden;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 100px;
+		}
+		.triangle-left{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background: red;
+			right:70px;
+			-webkit-transform: rotate(135deg);
+		    -moz-transform: rotate(135deg);
+		    -o-transform:  rotate(135deg);
+		    transform:rotate(135deg);
+		}
 	</style>
 </head>
 <body>
 	<div class="triangle-up"><!-- 向上的三角形 --></div>
 
 	<div class="triangle-down"><!-- 向下的三角形 --></div>
+
+	<div class="triangle-box">
+		<div class="triangle-left"></div>
+	</div>
 </body>
 </html>

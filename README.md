@@ -17,7 +17,7 @@ getUrlQuery:将url解析为查询参数对象
 
 randomArray:数组随机排列
 
-drawTriangle:css绘制三角形
+drawTriangle:css绘制三角形(方法1:border;方法2:transform rotate)
 
 holyGrailLayout:使用flex布局实现圣杯布局
 
