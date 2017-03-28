@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>promise在ajax中的应用</title>
+</head>
+<body>
+	<script>
+		function send(url, method, data){
+		    return new Promise(function (resolve, reject) {
+		        wx.request({
+		            url: url,
+		            data: data,
+		            header: {'content-type': 'application/json'},
+		            method: method.toUpperCase(),
+		            success: function (res) {
+		                resolve(res)
+		            },
+		            fail: function (err) {
+		                resolve(err)
+		            }
+		        })
+		    });
+		}
+	</script>
+</body>
+</html>

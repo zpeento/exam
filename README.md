@@ -22,3 +22,5 @@ drawTriangle:css绘制三角形(方法1:border;方法2:transform rotate)
 holyGrailLayout:使用flex布局实现圣杯布局
 
 webworker:html5新功能尝试
+
+ajaxPromise:ajax的promise实现
