@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阿里在线编程测试</title>
+	<style>
+		.title{
+			color: red
+		}
+		.warning{
+
+			background: red;
+			height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			display: inline-block;
+			color: white;
+			line-height: 20px;
+			text-align: center;
+			font-weight: bold;
+			font-family: "Microsoft Yahei";
+			margin-right: 5px;
+		}
+		
+		.wrap{
+			/*position: relative;*/
+			display: flex;
+			justify-content:space-between;
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+	<p class="left"><span class="title">*</span>请填写备注</p> 
+	<p class="right"><span id="count">0</span>/200</p>
+	</div>
+	<textarea id="input" type="text" placeholder="最多输入200个字符"  rows="6" cols="40"></textarea>
+	
+	
+	<script>
+		var input = document.getElementById('input')
+		var count = document.getElementById('count')
+		var number = 1; 
+		input.onkeyup = function(){
+			// number++;
+			// if(input.value.length>=number){
+			// 	count.innerHTML=input.value.length+1;
+			// 	console.log(number,input.value.length)
+			// }else{
+			// 	count.innerHTML = input.value.length;
+			// 	console.log(number,input.value.length+1)
+			// }
+			count.innerHTML=input.value.length;
+			console.log(input.value)
+			
+			if(input.value.length>9){
+				
+				var warning = document.createElement("div")
+				warning.innerHTML = '<p><span class="warning">X</span>亲，此项的内容填写长度不能超过200个字符哦</p>';
+				document.body.appendChild(warning);
+			}
+		}
+
+	</script>
+</body>
+</html>
