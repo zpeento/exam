@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>区分中文和英文</title>
+</head>
+<body>
+	<script>
+		//腾讯的一条面试题，之前确实不了解unicode编码
+		function codeLength(str) {
+			var result = 0
+			for(var i = 0; i < str.length ; i++){
+				if(str.charCodeAt(i)>255){
+					result += 2;
+				}else{
+					result++
+				}
+			}
+			console.log(result)
+		}
+		var str = 'hh中'
+		codeLength(str)
+	</script>	
+</body>
+</html>
